@@ -1,0 +1,5 @@
+FROM jonathancosme/base-notebook-root-py38
+
+RUN mamba install -c conda-forge jupyter-server-proxy -y && \
+    jupyter serverextension enable --sys-prefix jupyter_server_proxy && \
+    mamba clean --all -f -y 
